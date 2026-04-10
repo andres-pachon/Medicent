@@ -1,9 +1,9 @@
-INSERT INTO tipoDocumento (sigla, nombre) VALUES
-('CC', 'Cedula de Ciudadania'),
-('TI', 'Tarjeta de Identidad'),
-('CE', 'Cedula de Extranjeria'),
-('PPT', 'Permiso por Proteccion Temporal'),
-('PA', 'Pasaporte');
+use Medicent;
+INSERT INTO tipoDocumento (nombre) VALUES 
+('Cédula de Ciudadanía'),
+('Tarjeta de Identidad'),
+('Cédula de Extranjería'),
+('Pasaporte');
 
 INSERT INTO ViaAdministracion (nombre) VALUES
 ('Oral'),

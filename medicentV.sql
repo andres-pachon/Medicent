@@ -5,9 +5,8 @@ COLLATE utf8mb4_unicode_ci;
 USE Medicent;
 
 CREATE TABLE tipoDocumento (
-    Id_tipoDocumento INT PRIMARY KEY AUTO_INCREMENT,
-    sigla VARCHAR(10) NOT NULL UNIQUE,
-    nombre VARCHAR(60) NOT NULL
+    idtipoDocumento INT PRIMARY KEY AUTO_INCREMENT, -- Nombre ajustado a la imagen
+    nombre ENUM('Cédula de Ciudadanía', 'Tarjeta de Identidad', 'Cédula de Extranjería', 'Pasaporte') NOT NULL
 ) ENGINE=InnoDB;
 
 
@@ -28,7 +27,7 @@ CREATE TABLE Usuario (
 
     CONSTRAINT fk_user_tipoDoc 
     FOREIGN KEY (tipoDocumento_idtipoDoc)
-    REFERENCES tipoDocumento(Id_tipoDocumento)
+    REFERENCES tipoDocumento(idtipoDocumento)
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 ) ENGINE=InnoDB;
