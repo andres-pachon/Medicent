@@ -32,6 +32,11 @@ CREATE TABLE Usuario (
     ON UPDATE CASCADE
 ) ENGINE=InnoDB;
 
+CREATE TRIGGER tr_encriptar_clave 
+BEFORE INSERT ON Usuario 
+FOR EACH ROW 
+SET NEW.contraseña = SHA2(NEW.contraseña, 256);
+
 CREATE TABLE Paciente (
     Id_Paciente INT PRIMARY KEY AUTO_INCREMENT,
     estatura FLOAT,
